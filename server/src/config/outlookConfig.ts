@@ -8,3 +8,11 @@ passport.use(new OutlookStrategy({
 }, (accessToken, refreshToken, profile, done) => {
   return done(null, profile);
 }));
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
